@@ -1,0 +1,14 @@
+@font-face {
+	font-family: "MS Sans Serif Bold";
+	src: url(../../assets/fonts/MSSansSerifBold.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: "MS Sans Serif";
+	src: url(../../assets/fonts/MSSansSerif.woff2) format("woff2");
+}
+
+$main-grey: #bcbebd;
+$primary-font: "MS Sans Serif", sans-serif;
+$primary-font-bold: "MS Sans Serif Bold", sans-serif;
+$windows-gradient: linear-gradient(90deg, #050c80 35%, #2282cf 100%);
