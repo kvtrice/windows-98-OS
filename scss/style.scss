@@ -1,89 +1,17 @@
 @use "../scss/partials/variables" as v;
 @use "../scss/partials/mixins" as m;
 @import "../css/normalize.css";
+@import "../scss/partials/desktop";
+@import "../scss/partials/menu";
+@import "../scss/partials/apps";
+
+//Global Styles
 
 html {
 	font-family: v.$primary-font;
 	box-sizing: border-box;
 }
 
-.desktop {
-	height: 100vh;
-	width: 100vw;
-
-	&__wallpaper {
-		background-image: url("../assets/wallpapers/win-98-wallpaper3.jpg");
-		background-position: center center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		width: 100%;
-		height: 100%;
-	}
-
-	&__taskbar {
-		border-top: 1.5px solid white;
-		height: 2rem;
-		background-color: v.$main-grey;
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		left: 0;
-		display: flex;
-		justify-content: space-between;
-		padding: 3px;
-
-		&__left {
-			position: relative;
-			display: flex;
-			&__start {
-				height: 100%;
-				display: flex;
-				flex-direction: row;
-				justify-content: center;
-				align-items: center;
-				padding: 0 5px;
-				@include m.regular-borders;
-				border-radius: none;
-				background-color: v.$main-grey;
-
-				&:hover {
-					cursor: pointer;
-				}
-
-				&:active {
-					@include m.pressed-borders;
-				}
-
-				&__icon {
-					height: 20px;
-					width: 24px;
-				}
-
-				&__text {
-					padding-left: 5px;
-					font-family: v.$primary-font-bold;
-				}
-			}
-		}
-
-		&__right {
-			position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-			&__time {
-				height: 90%;
-                justify-self: center;
-                align-self: center;
-				text-align: center;
-				align-items: center;
-				@include m.pressed-borders;
-				padding: 0 5px;
-
-                p {
-                    line-height: 0;
-                }
-			}
-		}
-	}
+p {
+	line-height: 0;
 }

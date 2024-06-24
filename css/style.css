@@ -7,11 +7,14 @@
   font-family: "MS Sans Serif";
   src: url(../../assets/fonts/MSSansSerif.woff2) format("woff2");
 }
-html {
-  font-family: "MS Sans Serif", sans-serif;
-  box-sizing: border-box;
+@font-face {
+  font-family: "MS Sans Serif Bold";
+  src: url(../../assets/fonts/MSSansSerifBold.woff2) format("woff2");
 }
-
+@font-face {
+  font-family: "MS Sans Serif";
+  src: url(../../assets/fonts/MSSansSerif.woff2) format("woff2");
+}
 .desktop {
   height: 100vh;
   width: 100vw;
@@ -90,6 +93,31 @@ html {
   padding: 0 5px;
 }
 .desktop__taskbar__right__time p {
+  line-height: 0;
+}
+
+@font-face {
+  font-family: "MS Sans Serif Bold";
+  src: url(../../assets/fonts/MSSansSerifBold.woff2) format("woff2");
+}
+@font-face {
+  font-family: "MS Sans Serif";
+  src: url(../../assets/fonts/MSSansSerif.woff2) format("woff2");
+}
+@font-face {
+  font-family: "MS Sans Serif Bold";
+  src: url(../../assets/fonts/MSSansSerifBold.woff2) format("woff2");
+}
+@font-face {
+  font-family: "MS Sans Serif";
+  src: url(../../assets/fonts/MSSansSerif.woff2) format("woff2");
+}
+html {
+  font-family: "MS Sans Serif", sans-serif;
+  box-sizing: border-box;
+}
+
+p {
   line-height: 0;
 }
 
