@@ -1,5 +1,5 @@
 // Current Time
-const getCurrentTime = () => {
+export const getCurrentTime = () => {
 	const timeContainer = document.getElementById("time");
 	const currentDate = new Date();
 	const currentTime = currentDate.toLocaleTimeString([], {
@@ -11,5 +11,3 @@ const getCurrentTime = () => {
 	return (timeContainer.innerHTML =
 		hours >= 12 ? `${currentTime} PM` : `${currentTime} AM`);
 };
-
-getCurrentTime();
