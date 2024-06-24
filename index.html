@@ -16,6 +16,11 @@
 			href="./assets/favicon/win98.svg"
 			type="image/x-icon"
 		/>
+		<script
+			type="module"
+			src="./js/taskbar.js"
+			defer
+		></script>
 	</head>
 	<body>
 		<div class="desktop">
@@ -33,7 +38,11 @@
 						<p class="desktop__taskbar__left__start__text">Start</p>
 					</button>
 				</div>
-				<div class="desktop__taskbar__right"></div>
+				<div class="desktop__taskbar__right">
+					<div class="desktop__taskbar__right__time">
+						<p id="time"></p>
+					</div>
+				</div>
 			</section>
 		</div>
 	</body>

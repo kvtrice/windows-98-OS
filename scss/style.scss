@@ -1,9 +1,10 @@
 @use "../scss/partials/variables" as v;
+@use "../scss/partials/mixins" as m;
 @import "../css/normalize.css";
 
 html {
-	font-size: 16px;
 	font-family: v.$primary-font;
+	box-sizing: border-box;
 }
 
 .desktop {
@@ -20,7 +21,7 @@ html {
 	}
 
 	&__taskbar {
-		border-top: 1px solid white;
+		border-top: 1.5px solid white;
 		height: 2rem;
 		background-color: v.$main-grey;
 		position: absolute;
@@ -29,9 +30,11 @@ html {
 		left: 0;
 		display: flex;
 		justify-content: space-between;
-		padding: 2.5px;
+		padding: 3px;
 
 		&__left {
+			position: relative;
+			display: flex;
 			&__start {
 				height: 100%;
 				display: flex;
@@ -39,8 +42,7 @@ html {
 				justify-content: center;
 				align-items: center;
 				padding: 0 5px;
-				border-left: 1px solid white;
-				border-top: 1px solid white;
+				@include m.regular-borders;
 				border-radius: none;
 				background-color: v.$main-grey;
 
@@ -49,10 +51,7 @@ html {
 				}
 
 				&:active {
-					border-left: 1px solid black;
-					border-top: 1px solid black;
-					border-right: 1px solid white;
-					border-bottom: 1px solid white;
+					@include m.pressed-borders;
 				}
 
 				&__icon {
@@ -64,6 +63,26 @@ html {
 					padding-left: 5px;
 					font-family: v.$primary-font-bold;
 				}
+			}
+		}
+
+		&__right {
+			position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+			&__time {
+				height: 90%;
+                justify-self: center;
+                align-self: center;
+				text-align: center;
+				align-items: center;
+				@include m.pressed-borders;
+				padding: 0 5px;
+
+                p {
+                    line-height: 0;
+                }
 			}
 		}
 	}
