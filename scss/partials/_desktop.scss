@@ -16,7 +16,7 @@
 
 	&__taskbar {
 		border-top: 1.5px solid white;
-		height: 2rem;
+		height: 35px;
 		background-color: v.$main-grey;
 		position: absolute;
 		bottom: 0;
@@ -44,7 +44,7 @@
 					cursor: pointer;
 				}
 
-				&:active {
+				&:active, &.open {
 					@include m.pressed-borders;
 				}
 

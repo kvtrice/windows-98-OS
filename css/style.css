@@ -29,7 +29,7 @@
 }
 .desktop__taskbar {
   border-top: 1.5px solid white;
-  height: 2rem;
+  height: 35px;
   background-color: #bcbebd;
   position: absolute;
   bottom: 0;
@@ -60,7 +60,7 @@
 .desktop__taskbar__left__start:hover {
   cursor: pointer;
 }
-.desktop__taskbar__left__start:active {
+.desktop__taskbar__left__start:active, .desktop__taskbar__left__start.open {
   border-left: 1.5px solid black;
   border-top: 1.5px solid black;
   border-right: 1.5px solid white;
@@ -104,6 +104,72 @@
   font-family: "MS Sans Serif";
   src: url(../../assets/fonts/MSSansSerif.woff2) format("woff2");
 }
+.menu {
+  position: absolute;
+  border-left: 1.5px solid white;
+  border-top: 1.5px solid white;
+  border-right: 1.5px solid black;
+  border-bottom: 1.5px solid black;
+  bottom: 42px;
+  display: flex;
+  flex-direction: row;
+  width: 240px;
+  height: 450px;
+  margin-left: 3px;
+  visibility: hidden;
+}
+.menu.open {
+  visibility: visible !important;
+}
+.menu__windows {
+  background-image: linear-gradient(to bottom, #050c80 35%, #2282cf 100%);
+  height: 100%;
+  width: 35px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.menu__windows__text {
+  transform: rotate(-90deg);
+  text-wrap: nowrap;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  align-self: flex-end;
+  margin-bottom: 70px;
+}
+.menu__items {
+  width: 100%;
+  background-color: #bcbebd;
+  display: flex;
+  flex-direction: column;
+}
+.menu__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+.menu__item:hover {
+  background-color: #092392;
+  color: white;
+}
+.menu__item__left {
+  display: flex;
+}
+.menu__item__right {
+  align-self: center;
+  width: 15px;
+  height: 15px;
+}
+.menu__item__icon {
+  align-self: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
 @font-face {
   font-family: "MS Sans Serif Bold";
   src: url(../../assets/fonts/MSSansSerifBold.woff2) format("woff2");

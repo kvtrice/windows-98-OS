@@ -1,2 +1,74 @@
 @use "./variables" as v;
 @use "./mixins" as m;
+
+.menu {
+	position: absolute;
+	@include m.regular-borders;
+	bottom: 42px;
+	display: flex;
+	flex-direction: row;
+	width: 240px;
+	height: 450px;
+	margin-left: 3px;
+	visibility: hidden;
+
+	&.open {
+		visibility: visible !important;
+	}
+
+	&__windows {
+		background-image: v.$windows-gradient;
+		height: 100%;
+		width: 35px;
+		display: flex;
+		position: relative;
+		justify-content: center;
+		align-items: center;
+
+		&__text {
+			transform: rotate(-90deg);
+			text-wrap: nowrap;
+			font-family: Arial, Helvetica, sans-serif;
+			font-weight: bold;
+			font-size: 18px;
+			color: white;
+			align-self: flex-end;
+			margin-bottom: 70px;
+		}
+	}
+
+	&__items {
+		width: 100%;
+		background-color: v.$main-grey;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		padding: 5px 10px;
+
+		&:hover {
+			background-color: v.$ms-blue;
+			color: white;
+		}
+
+		&__left {
+			display: flex;
+		}
+
+		&__right {
+			align-self: center;
+			width: 15px;
+			height: 15px;
+		}
+
+		&__icon {
+			align-self: center;
+			width: 24px;
+			height: 24px;
+			margin-right: 10px;
+		}
+	}
+}
