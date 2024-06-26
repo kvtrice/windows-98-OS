@@ -11,3 +11,10 @@
 	border-right: 1.5px solid white;
 	border-bottom: 1.5px solid white;
 }
+
+@mixin flex-center {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
