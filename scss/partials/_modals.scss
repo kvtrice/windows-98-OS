@@ -1,0 +1,93 @@
+@use "./variables" as v;
+@use "./mixins" as m;
+
+.modal {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 5;
+	@include m.regular-borders;
+
+	&__wrapper {
+		border: 2px solid v.$main-grey;
+	}
+	@include m.regular-borders;
+
+	&__header {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background: v.$windows-gradient-l-to-r;
+		color: white;
+
+		&__left {
+			display: flex;
+			align-items: center;
+
+			&__app-icon {
+				height: 25px;
+				padding: 0 5px;
+			}
+
+			&__app-title {
+				padding-left: 3px;
+			}
+		}
+
+		&__right {
+			display: flex;
+			gap: 3px;
+			padding: 0 5px;
+
+			&__button {
+				width: 20px;
+				background-color: v.$main-grey !important;
+				@include m.regular-borders;
+				color: black;
+				text-align: center;
+			}
+		}
+	}
+
+	&__nav {
+		background-color: v.$main-grey;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		gap: 5px;
+		overflow: hidden;
+
+		&__item {
+			border: 2px transparent solid;
+			padding: 3px 5px;
+
+			&:hover {
+				@include m.regular-borders;
+			}
+		}
+	}
+
+	&__content {
+		flex: 1 1 auto;
+		background-color: white;
+		@include m.pressed-borders;
+		height: 500px;
+		width: 500px;
+	}
+
+	&__footer {
+		background-color: v.$main-grey;
+		height: 25px;
+		display: flex;
+		padding-top: 2px;
+		flex-shrink: 0;
+
+		&__left,
+		&__right {
+			@include m.pressed-borders;
+			width: 100%;
+		}
+	}
+}

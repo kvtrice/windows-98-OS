@@ -1,6 +1,6 @@
-const desktopItems = [{
-    
-}]
+import { createModal } from "./dom-utils.js";
+
+const desktopItems = [{}];
 
 export const highlightOnClick = () => {
 	const apps = document.querySelectorAll(".app");

@@ -53,9 +53,25 @@ export const createMenuItem = () => {
 	});
 };
 
-export const toggleMenu = () => {
-	const menu = document.getElementById("menu");
+export const menuHandler = () => {
 	const startButton = document.getElementById("start");
-	menu.classList.toggle("open");
-	startButton.classList.toggle("open");
+	const toggleMenu = () => {
+		const menu = document.getElementById("menu");
+		const startButton = document.getElementById("start");
+		menu.classList.toggle("open");
+		startButton.classList.toggle("open");
+	};
+
+	startButton.addEventListener("click", toggleMenu);
+
+	document.addEventListener("click", event => {
+		const menu = document.getElementById("menu");
+		if (
+			!menu.contains(event.target) &&
+			!startButton.contains(event.target)
+		) {
+			menu.classList.remove("open");
+			startButton.classList.remove("open");
+		}
+	});
 };

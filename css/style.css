@@ -220,6 +220,109 @@
   filter: grayscale(80%);
 }
 
+@font-face {
+  font-family: "MS Sans Serif Bold";
+  src: url(../../assets/fonts/MSSansSerifBold.woff2) format("woff2");
+}
+@font-face {
+  font-family: "MS Sans Serif";
+  src: url(../../assets/fonts/MSSansSerif.woff2) format("woff2");
+}
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  border-left: 1.5px solid white;
+  border-top: 1.5px solid white;
+  border-right: 1.5px solid black;
+  border-bottom: 1.5px solid black;
+  border-left: 1.5px solid white;
+  border-top: 1.5px solid white;
+  border-right: 1.5px solid black;
+  border-bottom: 1.5px solid black;
+}
+.modal__wrapper {
+  border: 2px solid #bcbebd;
+}
+.modal__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #050c80 35%, #2282cf 100%);
+  color: white;
+}
+.modal__header__left {
+  display: flex;
+  align-items: center;
+}
+.modal__header__left__app-icon {
+  height: 25px;
+  padding: 0 5px;
+}
+.modal__header__left__app-title {
+  padding-left: 3px;
+}
+.modal__header__right {
+  display: flex;
+  gap: 3px;
+  padding: 0 5px;
+}
+.modal__header__right__button {
+  width: 20px;
+  background-color: #bcbebd !important;
+  border-left: 1.5px solid white;
+  border-top: 1.5px solid white;
+  border-right: 1.5px solid black;
+  border-bottom: 1.5px solid black;
+  color: black;
+  text-align: center;
+}
+.modal__nav {
+  background-color: #bcbebd;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 5px;
+  overflow: hidden;
+}
+.modal__nav__item {
+  border: 2px transparent solid;
+  padding: 3px 5px;
+}
+.modal__nav__item:hover {
+  border-left: 1.5px solid white;
+  border-top: 1.5px solid white;
+  border-right: 1.5px solid black;
+  border-bottom: 1.5px solid black;
+}
+.modal__content {
+  flex: 1 1 auto;
+  background-color: white;
+  border-left: 1.5px solid black;
+  border-top: 1.5px solid black;
+  border-right: 1.5px solid white;
+  border-bottom: 1.5px solid white;
+  height: 500px;
+  width: 500px;
+}
+.modal__footer {
+  background-color: #bcbebd;
+  height: 25px;
+  display: flex;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+.modal__footer__left, .modal__footer__right {
+  border-left: 1.5px solid black;
+  border-top: 1.5px solid black;
+  border-right: 1.5px solid white;
+  border-bottom: 1.5px solid white;
+  width: 100%;
+}
+
 html {
   font-family: "MS Sans Serif", sans-serif;
   box-sizing: border-box;

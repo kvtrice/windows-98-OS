@@ -28,3 +28,59 @@ export const newMenuItemFolder = (src, alt, name) => {
 		}
 	});
 };
+
+// appName, appIcon, appContent
+
+export const createModal = () => {
+	const modal = document.createElement("div");
+	modal.classList.add("modal");
+
+	modal.innerHTML = `
+		<div class="modal__wrapper">
+		<div class="modal__header">
+			<div class="modal__header__left">
+				<img
+					src="./assets/icons/calculator.png"
+					alt="Calculator"
+					class="modal__header__left__app-icon"
+				/>
+				<p class="modal__header__left__app-title">
+					Calculator
+				</p>
+			</div>
+			<div class="modal__header__right">
+				<div
+					class="modal__header__right__button --minimise"
+				>
+					_
+				</div>
+				<div class="modal__header__right__button --full">
+					O
+				</div>
+				<div class="modal__header__right__button --close">
+					X
+				</div>
+			</div>
+		</div>
+		<div class="modal__nav">
+			<div class="modal__nav__item">File</div>
+			<div class="modal__nav__item">Edit</div>
+			<div class="modal__nav__item">Help</div>
+		</div>
+		<div class="modal__content"></div>
+		<div class="modal__footer">
+			<div class="modal__footer__left"></div>
+			<div class="modal__footer__right"></div>
+		</div>
+	</div>
+	`;
+
+	// const desktop = document.querySelector('.deskto');
+	document.body.appendChild(modal);
+
+	modal.querySelector(".--close").addEventListener("click", () => {
+		modal.remove();
+	});
+
+	return modal;
+};
