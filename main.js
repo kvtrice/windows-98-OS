@@ -1,12 +1,16 @@
 import { getCurrentTime } from "./modules/taskbar.js";
 import { toggleMenu } from "./modules/menu.js";
+import { createMenuItemFolder, createMenuItem } from "./modules/menu.js";
 
-// Get current time every second
 document.addEventListener("DOMContentLoaded", () => {
+	// Create Menu Items
+	createMenuItemFolder();
+	createMenuItem();
+
+	// Get current time every second
 	getCurrentTime();
 	setInterval(getCurrentTime, 1000);
 });
-
 // DOM Elements
 const startButton = document.getElementById("start");
 const menu = document.getElementById("menu");
