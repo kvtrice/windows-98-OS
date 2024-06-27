@@ -137,12 +137,13 @@ export const createMediaPlayer = () => {
 	<div class="media-player">
 		<video
 			class="media-player__video"
-			controls
+
 		>
 			<source
 				src="./assets/media/never-gonna-give-you-up.mp4"
 				type="video/mp4"
 			/>
+			Your browser does not support the video tag.
 		</video>
 		<div class="media-player__controls">
 			<div class="media-player__controls__left">

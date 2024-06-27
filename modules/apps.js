@@ -3,6 +3,7 @@ import {
 	createModal,
 	createMediaPlayer,
 } from "./dom-utils.js";
+import { handleMediaPlayer } from "./media-player.js";
 
 export const highlightOnClick = () => {
 	const apps = document.querySelectorAll(".app");
@@ -57,6 +58,9 @@ export const openApps = () => {
 	apps.forEach(({ name, id, asset, createFunction }) => {
 		document.getElementById(id).addEventListener("dblclick", () => {
 			createModal(name, asset, createFunction);
+			if (name === "Media Player") {
+				handleMediaPlayer();
+			}
 		});
 	});
 };

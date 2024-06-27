@@ -395,7 +395,8 @@
 }
 .media-player__video {
   width: 100%;
-  max-width: 800px;
+  width: 700px;
+  aspect-ratio: 16/9;
 }
 .media-player__controls {
   padding-top: 15px;

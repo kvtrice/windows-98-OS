@@ -9,7 +9,8 @@
 
 	&__video {
 		width: 100%;
-		max-width: 800px;
+		width: 700px;
+		aspect-ratio: 16/9;
 	}
 
 	&__controls {
