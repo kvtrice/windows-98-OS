@@ -1,3 +1,5 @@
+import { calculatorButtons } from "./calculator.js";
+
 export const newMenuItem = (src, alt, name) => {
 	const menuItemsContainer = document.querySelector(".menu__items");
 	const div = document.createElement("div");
@@ -28,8 +30,6 @@ export const newMenuItemFolder = (src, alt, name) => {
 		}
 	});
 };
-
-// appName, appIcon, appContent
 
 export const createModal = (appName, appIcon, appContent) => {
 	const modal = document.createElement("div");
@@ -77,10 +77,9 @@ export const createModal = (appName, appIcon, appContent) => {
 	`;
 
 	document.body.appendChild(modal);
-	
+
 	const appContentDiv = document.querySelector(".modal__content");
 	appContentDiv.appendChild(appContent);
-
 
 	modal.querySelector(".--close").addEventListener("click", () => {
 		modal.remove();
@@ -96,37 +95,35 @@ export const createCalculator = () => {
 	<div class="calculator__display">0.</div>
 		<div class="calculator__buttons">
 			<div class="calculator__buttons__nums">
-				<button class="calc-btn">7</button>
-				<button class="calc-btn">8</button>
-				<button class="calc-btn">9</button>
-				<button class="calc-btn --operator">/</button>
-				<button class="calc-btn">4</button>
-				<button class="calc-btn">5</button>
-				<button class="calc-btn">6</button>
-				<button class="calc-btn --operator">*</button>
-				<button class="calc-btn">1</button>
-				<button class="calc-btn">2</button>
-				<button class="calc-btn">3</button>
-				<button class="calc-btn --operator">-</button>
-				<button class="calc-btn"></button>
-				<button class="calc-btn">0</button>
-				<button class="calc-btn">.</button>
-				<button class="calc-btn --operator">+</button>
 			</div>
 			<div class="calculator__buttons__action">
 				<button
-					class="calculator__buttons__action--clear calc-btn --operator"
+					class="calculator__buttons__action calc-btn --operator"
 				>
 					CE
 				</button>
 				<button
-					class="calculator__buttons__action--equals calc-btn --operator"
+					class="calculator__buttons__action calc-btn --operator"
 				>
 					=
 				</button>
 			</div>
 		</div>
 	`;
+
+	const buttonsDiv = calculatorDiv.querySelector(
+		".calculator__buttons__nums"
+	);
+
+	calculatorButtons.forEach(button => {
+		const buttonEl = document.createElement("button");
+		button.operator
+			? buttonEl.classList.add("--operator", "calc-btn")
+			: buttonEl.classList.add("calc-btn");
+		const value = document.createTextNode(button.val);
+		buttonEl.appendChild(value);
+		buttonsDiv.appendChild(buttonEl);
+	});
 
 	return calculatorDiv;
 };

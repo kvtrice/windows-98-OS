@@ -374,10 +374,9 @@
 .calculator__buttons__action {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   gap: 2px;
-}
-.calculator__buttons__action--clear, .calculator__buttons__action--equals {
-  width: 100%;
 }
 
 html {

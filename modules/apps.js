@@ -1,6 +1,4 @@
-import { createModal } from "./dom-utils.js";
-
-const desktopItems = [{}];
+import { createCalculator, createModal } from "./dom-utils.js";
 
 export const highlightOnClick = () => {
 	const apps = document.querySelectorAll(".app");
@@ -33,5 +31,22 @@ export const highlightOnClick = () => {
 		if (!event.target.closest(".app")) {
 			deselectAll();
 		}
+	});
+};
+
+export const openApps = () => {
+	const apps = [
+		{
+			name: "Calculator",
+			id: "calculator",
+			asset: "./assets/icons/calculator.png",
+			createFunction: createCalculator(),
+		},
+	];
+
+	apps.forEach(({ name, id, asset, createFunction }) => {
+		document.getElementById(id).addEventListener("dblclick", () => {
+			createModal(name, asset, createFunction);
+		});
 	});
 };

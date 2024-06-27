@@ -1,24 +1,20 @@
 import { setTime } from "./modules/taskbar.js";
 import { menuHandler } from "./modules/menu.js";
 import { createMenuItemFolder, createMenuItem } from "./modules/menu.js";
-import { highlightOnClick } from "./modules/apps.js";
-import { createCalculator, createModal } from "./modules/dom-utils.js";
-
-// Create Menu Items
-createMenuItemFolder();
-createMenuItem();
+import { highlightOnClick, openApps } from "./modules/apps.js";
 
 // Get the current time
 setTime();
 
-// Highlight Desktop Apps on Click
-highlightOnClick();
-
+// Handle Start Menu
 menuHandler();
 
-const calculatorApp = document.getElementById("calculator");
+// Create Start Menu Items
+createMenuItemFolder();
+createMenuItem();
 
-calculatorApp.addEventListener("dblclick", () => {
-	const calculator = createCalculator();
-	createModal("Calculator", "./assets/icons/calculator.png", calculator);
-});
+// Highlight Desktop Apps on Single Click
+highlightOnClick();
+
+// Create and Open Desktop Apps on Double Click
+openApps();
