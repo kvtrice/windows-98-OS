@@ -1,0 +1,52 @@
+@use "./variables" as v;
+@use "./mixins" as m;
+
+.media-player {
+	display: flex;
+	flex-direction: column;
+	padding: 5px;
+	background-color: v.$main-grey;
+
+	&__video {
+		width: 100%;
+		max-width: 800px;
+	}
+
+	&__controls {
+		padding-top: 15px;
+		display: flex;
+		justify-content: flex-start;
+
+		&__left,
+		&__right {
+			display: flex;
+			flex-direction: row;
+		}
+	}
+
+	&__button {
+		display: block;
+		border: none;
+		background-color: transparent;
+		cursor: pointer;
+
+		&__icon {
+			width: 24px;
+		}
+	}
+
+	.--play img,
+	.--pause img {
+		width: 20px;
+		align-self: center;
+		justify-self: center;
+	}
+
+	.--pause {
+		border-right: 2px solid darkgrey;
+	}
+
+	.--back {
+		border-left: 1px solid rgb(209, 208, 208);
+	}
+}

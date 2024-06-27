@@ -1,4 +1,8 @@
-import { createCalculator, createModal } from "./dom-utils.js";
+import {
+	createCalculator,
+	createModal,
+	createMediaPlayer,
+} from "./dom-utils.js";
 
 export const highlightOnClick = () => {
 	const apps = document.querySelectorAll(".app");
@@ -41,6 +45,12 @@ export const openApps = () => {
 			id: "calculator",
 			asset: "./assets/icons/calculator.png",
 			createFunction: createCalculator(),
+		},
+		{
+			name: "Media Player",
+			id: "media-player",
+			asset: "./assets/icons/media-player.png",
+			createFunction: createMediaPlayer(),
 		},
 	];
 

@@ -379,6 +379,55 @@
   gap: 2px;
 }
 
+@font-face {
+  font-family: "MS Sans Serif Bold";
+  src: url(../../assets/fonts/MSSansSerifBold.woff2) format("woff2");
+}
+@font-face {
+  font-family: "MS Sans Serif";
+  src: url(../../assets/fonts/MSSansSerif.woff2) format("woff2");
+}
+.media-player {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  background-color: #bcbebd;
+}
+.media-player__video {
+  width: 100%;
+  max-width: 800px;
+}
+.media-player__controls {
+  padding-top: 15px;
+  display: flex;
+  justify-content: flex-start;
+}
+.media-player__controls__left, .media-player__controls__right {
+  display: flex;
+  flex-direction: row;
+}
+.media-player__button {
+  display: block;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.media-player__button__icon {
+  width: 24px;
+}
+.media-player .--play img,
+.media-player .--pause img {
+  width: 20px;
+  align-self: center;
+  justify-self: center;
+}
+.media-player .--pause {
+  border-right: 2px solid darkgrey;
+}
+.media-player .--back {
+  border-left: 1px solid rgb(209, 208, 208);
+}
+
 html {
   font-family: "MS Sans Serif", sans-serif;
   box-sizing: border-box;

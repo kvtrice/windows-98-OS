@@ -127,3 +127,60 @@ export const createCalculator = () => {
 
 	return calculatorDiv;
 };
+
+//src
+
+export const createMediaPlayer = () => {
+	const mediaPlayerDiv = document.createElement("div");
+	mediaPlayerDiv.classList.add("media-player");
+	mediaPlayerDiv.innerHTML = `
+	<div class="media-player">
+		<video
+			class="media-player__video"
+			controls
+		>
+			<source
+				src="./assets/media/never-gonna-give-you-up.mp4"
+				type="video/mp4"
+			/>
+		</video>
+		<div class="media-player__controls">
+			<div class="media-player__controls__left">
+				<button class="media-player__button --play">
+					<img
+						class="media-player__button__icon"
+						src="./assets/icons/media-player/play.png"
+						alt="Play"
+					/>
+				</button>
+				<button class="media-player__button --pause">
+					<img
+						class="media-player__button__icon"
+						src="./assets/icons/media-player/pause.png"
+						alt="Pause"
+					/>
+				</button>
+			</div>
+			
+			<div class="media-player__controls__right">
+				<button class="media-player__button --back">
+					<img
+						class="media-player__button__icon"
+						src="./assets/icons/media-player/back.png"
+						alt="Back"
+					/>
+				</button>
+				<button class="media-player__button --next">
+					<img
+						class="media-player__button__icon"
+						src="./assets/icons/media-player/next.png"
+						alt="Next"
+					/>
+				</button>
+			</div>
+		</div>
+	</div>
+	`;
+
+	return mediaPlayerDiv;
+};
