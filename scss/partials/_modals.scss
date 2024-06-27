@@ -47,6 +47,7 @@
 				@include m.regular-borders;
 				color: black;
 				text-align: center;
+				cursor: pointer;
 			}
 		}
 	}
@@ -62,6 +63,7 @@
 		&__item {
 			border: 2px transparent solid;
 			padding: 3px 5px;
+			cursor: pointer;
 
 			&:hover {
 				@include m.regular-borders;
@@ -71,10 +73,7 @@
 
 	&__content {
 		flex: 1 1 auto;
-		background-color: white;
-		@include m.pressed-borders;
-		height: 500px;
-		width: 500px;
+		background-color: v.$main-grey;
 	}
 
 	&__footer {

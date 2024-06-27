@@ -31,7 +31,7 @@ export const newMenuItemFolder = (src, alt, name) => {
 
 // appName, appIcon, appContent
 
-export const createModal = () => {
+export const createModal = (appName, appIcon, appContent) => {
 	const modal = document.createElement("div");
 	modal.classList.add("modal");
 
@@ -40,12 +40,12 @@ export const createModal = () => {
 		<div class="modal__header">
 			<div class="modal__header__left">
 				<img
-					src="./assets/icons/calculator.png"
-					alt="Calculator"
+					src=${appIcon}
+					alt=${appName}
 					class="modal__header__left__app-icon"
 				/>
 				<p class="modal__header__left__app-title">
-					Calculator
+					${appName}
 				</p>
 			</div>
 			<div class="modal__header__right">
@@ -67,7 +67,8 @@ export const createModal = () => {
 			<div class="modal__nav__item">Edit</div>
 			<div class="modal__nav__item">Help</div>
 		</div>
-		<div class="modal__content"></div>
+		<div class="modal__content">
+		</div>
 		<div class="modal__footer">
 			<div class="modal__footer__left"></div>
 			<div class="modal__footer__right"></div>
@@ -75,12 +76,57 @@ export const createModal = () => {
 	</div>
 	`;
 
-	// const desktop = document.querySelector('.deskto');
 	document.body.appendChild(modal);
+	
+	const appContentDiv = document.querySelector(".modal__content");
+	appContentDiv.appendChild(appContent);
+
 
 	modal.querySelector(".--close").addEventListener("click", () => {
 		modal.remove();
 	});
 
 	return modal;
+};
+
+export const createCalculator = () => {
+	const calculatorDiv = document.createElement("div");
+	calculatorDiv.classList.add("calculator");
+	calculatorDiv.innerHTML = `
+	<div class="calculator__display">0.</div>
+		<div class="calculator__buttons">
+			<div class="calculator__buttons__nums">
+				<button class="calc-btn">7</button>
+				<button class="calc-btn">8</button>
+				<button class="calc-btn">9</button>
+				<button class="calc-btn --operator">/</button>
+				<button class="calc-btn">4</button>
+				<button class="calc-btn">5</button>
+				<button class="calc-btn">6</button>
+				<button class="calc-btn --operator">*</button>
+				<button class="calc-btn">1</button>
+				<button class="calc-btn">2</button>
+				<button class="calc-btn">3</button>
+				<button class="calc-btn --operator">-</button>
+				<button class="calc-btn"></button>
+				<button class="calc-btn">0</button>
+				<button class="calc-btn">.</button>
+				<button class="calc-btn --operator">+</button>
+			</div>
+			<div class="calculator__buttons__action">
+				<button
+					class="calculator__buttons__action--clear calc-btn --operator"
+				>
+					CE
+				</button>
+				<button
+					class="calculator__buttons__action--equals calc-btn --operator"
+				>
+					=
+				</button>
+			</div>
+		</div>
+	`;
+
+	return calculatorDiv;
 };

@@ -1,0 +1,57 @@
+@use "./variables" as v;
+@use "./mixins" as m;
+
+.calculator {
+	width: 300px;
+	height: 200px;
+	display: flex;
+	flex-direction: column;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+
+	.calc-btn {
+		@include m.regular-borders;
+		background-color: v.$main-grey;
+		padding: 4px;
+		text-align: center;
+		cursor: pointer;
+		width: 100%;
+		color: blue;
+
+		&.--operator {
+			color: red;
+		}
+	}
+
+	&__display {
+		background-color: white;
+		text-align: right;
+		padding: 5px 2px;
+		@include m.pressed-borders;
+	}
+
+	&__buttons {
+		display: flex;
+		flex-direction: column;
+
+		&__nums {
+			display: grid;
+			grid-template-rows: 1fr 1fr 1fr 1fr;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			gap: 2px;
+			padding: 6px 0;
+		}
+
+		&__action {
+			display: flex;
+			flex-direction: row;
+			gap: 2px;
+
+			&--clear,
+			&--equals {
+				width: 100%;
+			}
+		}
+	}
+}

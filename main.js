@@ -2,7 +2,7 @@ import { setTime } from "./modules/taskbar.js";
 import { menuHandler } from "./modules/menu.js";
 import { createMenuItemFolder, createMenuItem } from "./modules/menu.js";
 import { highlightOnClick } from "./modules/apps.js";
-import { createModal } from "./modules/dom-utils.js";
+import { createCalculator, createModal } from "./modules/dom-utils.js";
 
 // Create Menu Items
 createMenuItemFolder();
@@ -19,5 +19,6 @@ menuHandler();
 const calculatorApp = document.getElementById("calculator");
 
 calculatorApp.addEventListener("dblclick", () => {
-	createModal();
+	const calculator = createCalculator();
+	createModal("Calculator", "./assets/icons/calculator.png", calculator);
 });
