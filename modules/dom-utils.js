@@ -1,4 +1,5 @@
 import { calculatorButtons } from "./calculator.js";
+import { desktopApps } from "./desktop.js";
 
 export const newMenuItem = (src, alt, name) => {
 	const menuItemsContainer = document.querySelector(".menu__items");
@@ -184,4 +185,27 @@ export const createMediaPlayer = () => {
 	`;
 
 	return mediaPlayerDiv;
+};
+
+export const createDesktopApps = () => {
+	const parent = document.querySelector(".apps");
+	desktopApps.forEach(app => {
+		const appDiv = document.createElement("div");
+		appDiv.classList.add("app");
+		appDiv.innerHTML = `
+			<div
+				class="app__items"
+				${app.id ? `id="${app.id}"` : ""}
+			>
+				<img
+					src=${app.src}
+					alt=${app.name}
+					class="app__img"
+				/>
+				<p class="app__text">${app.name}</p>
+			</div>
+		`;
+
+		parent.appendChild(appDiv);
+	});
 };
