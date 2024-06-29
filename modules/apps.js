@@ -3,6 +3,7 @@ import {
 	createModal,
 	createMediaPlayer,
 	createNotepad,
+	createTaskbarWindow,
 } from "./dom-utils.js";
 import { handleMediaPlayer } from "./media-player.js";
 import { handleCalculator } from "./calculator.js";
@@ -66,7 +67,22 @@ export const openApps = () => {
 
 	apps.forEach(({ name, id, asset, createFunction }) => {
 		document.getElementById(id).addEventListener("dblclick", () => {
+			const modal = document.querySelector(".modal");
+			const taskBarWindow = document.querySelector(
+				".desktop__taskbar__left__open-window-container"
+			);
+
+			if (modal) {
+				modal.remove();
+			}
+
+			if (taskBarWindow) {
+				taskBarWindow.remove();
+			}
+
 			createModal(name, asset, createFunction);
+			createTaskbarWindow(asset, name);
+
 			if (name === "Media Player") {
 				handleMediaPlayer();
 			} else if (name === "Calculator") {

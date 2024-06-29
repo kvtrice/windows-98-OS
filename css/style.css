@@ -43,19 +43,25 @@
   position: relative;
   display: flex;
 }
-.desktop__taskbar__left__start {
-  height: 100%;
+.desktop__taskbar__left__start-container {
+  border-right: 1px solid grey;
+}
+.desktop__taskbar__left__start, .desktop__taskbar__left__open-window {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 0 5px;
+  border-radius: none;
+  background-color: #bcbebd;
+}
+.desktop__taskbar__left__start {
   border-left: 1.5px solid white;
   border-top: 1.5px solid white;
   border-right: 1.5px solid black;
   border-bottom: 1.5px solid black;
-  border-radius: none;
   background-color: #bcbebd;
+  margin-right: 10px;
 }
 .desktop__taskbar__left__start:hover {
   cursor: pointer;
@@ -73,6 +79,46 @@
 .desktop__taskbar__left__start__text {
   padding-left: 5px;
   font-family: "MS Sans Serif Bold", sans-serif;
+}
+.desktop__taskbar__left__open-window-container {
+  border-left: 1px solid white;
+}
+.desktop__taskbar__left__open-window {
+  background-color: rgb(217, 217, 217);
+  border-left: 1.5px solid black;
+  border-top: 1.5px solid black;
+  border-right: 1.5px solid white;
+  border-bottom: 1.5px solid white;
+  margin-left: 10px;
+}
+.desktop__taskbar__left__open-window:active, .desktop__taskbar__left__open-window.open {
+  border-left: 1.5px solid black;
+  border-top: 1.5px solid black;
+  border-right: 1.5px solid white;
+  border-bottom: 1.5px solid white;
+}
+.desktop__taskbar__left__open-window__icon {
+  height: 24px;
+  width: 24px;
+}
+.desktop__taskbar__left__open-window__text {
+  padding-left: 5px;
+  font-family: "MS Sans Serif", sans-serif;
+}
+.desktop__taskbar__left__shortcuts {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-left: 1px solid white;
+  border-right: 1px solid grey;
+}
+.desktop__taskbar__left__shortcuts__icons {
+  height: 24px;
+  width: 24px;
 }
 .desktop__taskbar__right {
   position: relative;
@@ -446,6 +492,31 @@
 }
 .media-player .--back {
   border-left: 1px solid rgb(209, 208, 208);
+}
+
+@font-face {
+  font-family: "MS Sans Serif Bold";
+  src: url(../../assets/fonts/MSSansSerifBold.woff2) format("woff2");
+}
+@font-face {
+  font-family: "MS Sans Serif";
+  src: url(../../assets/fonts/MSSansSerif.woff2) format("woff2");
+}
+.notepad {
+  width: 500px;
+  height: 300px;
+}
+.notepad__text {
+  width: calc(100% - 13px);
+  height: calc(100% - 13px);
+  padding: 5px;
+  border-left: 1.5px solid black;
+  border-top: 1.5px solid black;
+  border-right: 1.5px solid white;
+  border-bottom: 1.5px solid white;
+}
+.notepad__text:focus {
+  outline: none;
 }
 
 html {

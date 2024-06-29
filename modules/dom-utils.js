@@ -83,7 +83,11 @@ export const createModal = (appName, appIcon, appContent) => {
 	appContentDiv.appendChild(appContent);
 
 	modal.querySelector(".--close").addEventListener("click", () => {
+		const taskBarWindow = document.querySelector(
+			".desktop__taskbar__left__open-window-container"
+		);
 		modal.remove();
+		taskBarWindow.remove();
 	});
 
 	return modal;
@@ -213,4 +217,34 @@ export const createDesktopApps = () => {
 	});
 };
 
-export const createNotepad = () => {};
+export const createNotepad = () => {
+	const notepadDiv = document.createElement("div");
+	notepadDiv.classList.add("notepad");
+	notepadDiv.innerHTML = `
+        <textarea class="notepad__text"></textarea>
+    `;
+	return notepadDiv;
+};
+
+export const createTaskbarWindow = (img, name) => {
+	const taskBarWindow = document.createElement("div");
+	taskBarWindow.classList.add(
+		"desktop__taskbar__left__open-window-container"
+	);
+
+	taskBarWindow.innerHTML = `
+		<div class="desktop__taskbar__left__open-window">
+			<img
+				class="desktop__taskbar__left__open-window__icon"
+				src=${img}
+				alt=${name}
+			/>
+			<p class="desktop__taskbar__left__open-window__text">
+				${name}
+			</p>
+		</div>
+	`;
+
+	const taskbarLeft = document.querySelector(".desktop__taskbar__left");
+	taskbarLeft.appendChild(taskBarWindow);
+};
