@@ -1,6 +1,5 @@
 import {
 	createCalculator,
-	createModal,
 	createMediaPlayer,
 	createNotepad,
 	createTaskbarWindow,
@@ -8,6 +7,7 @@ import {
 import { handleMediaPlayer } from "./media-player.js";
 import { handleCalculator } from "./calculator.js";
 import { handleNotepad } from "./notepad.js";
+import { handleModal } from "./modals.js";
 
 export const highlightOnClick = () => {
 	const apps = document.querySelectorAll(".app");
@@ -80,15 +80,13 @@ export const openApps = () => {
 				taskBarWindow.remove();
 			}
 
-			createModal(name, asset, createFunction);
+			handleModal(name, asset, createFunction);
 			createTaskbarWindow(asset, name);
 
 			if (name === "Media Player") {
 				handleMediaPlayer();
 			} else if (name === "Calculator") {
 				handleCalculator();
-			} else if (name === "Notepad") {
-				handleNotepad();
 			}
 		});
 	});

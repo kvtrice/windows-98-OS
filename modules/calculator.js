@@ -38,7 +38,6 @@ export const handleCalculator = () => {
 	const domOperatorButtons = Array.from(
 		calculator.querySelectorAll(".--operator:not(.--clear):not(.--equals)")
 	);
-	console.log(domOperatorButtons);
 
 	const updateDisplay = value => {
 		calcDisplay.innerHTML = value;

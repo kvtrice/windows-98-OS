@@ -64,9 +64,9 @@ export const createModal = (appName, appIcon, appContent) => {
 			</div>
 		</div>
 		<div class="modal__nav">
-			<div class="modal__nav__item">File</div>
-			<div class="modal__nav__item">Edit</div>
-			<div class="modal__nav__item">Help</div>
+			<div class="modal__nav__item" id="file">File</div>
+			<div class="modal__nav__item" id="edit">Edit</div>
+			<div class="modal__nav__item" id="help">Help</div>
 		</div>
 		<div class="modal__content">
 		</div>
@@ -79,9 +79,6 @@ export const createModal = (appName, appIcon, appContent) => {
 
 	document.body.appendChild(modal);
 
-	const appContentDiv = document.querySelector(".modal__content");
-	appContentDiv.appendChild(appContent);
-
 	modal.querySelector(".--close").addEventListener("click", () => {
 		const taskBarWindow = document.querySelector(
 			".desktop__taskbar__left__open-window-container"
@@ -89,8 +86,6 @@ export const createModal = (appName, appIcon, appContent) => {
 		modal.remove();
 		taskBarWindow.remove();
 	});
-
-	return modal;
 };
 
 export const createCalculator = () => {
@@ -136,7 +131,6 @@ export const createCalculator = () => {
 	return calculatorDiv;
 };
 
-//src
 
 export const createMediaPlayer = () => {
 	const mediaPlayerDiv = document.createElement("div");
@@ -247,4 +241,45 @@ export const createTaskbarWindow = (img, name) => {
 
 	const taskbarLeft = document.querySelector(".desktop__taskbar__left");
 	taskbarLeft.appendChild(taskBarWindow);
+};
+
+export const createModalNavMenuDropdowns = (dropdown, modalContent) => {
+	const menuDiv = document.createElement("div");
+	menuDiv.classList.add("modal__nav__item__dropdown");
+	const itemDiv = document.createElement("div");
+
+	if (dropdown === "file") {
+		if (document.querySelector(".notepad")) {
+			const saveFileDiv = document.createElement("div");
+			saveFileDiv.classList.add("modal__nav__item__dropdown__menu");
+			const saveFileText = document.createTextNode("Save");
+			saveFileDiv.appendChild(saveFileText);
+			saveFileDiv.classList.add("--save");
+			menuDiv.appendChild(saveFileDiv);
+		}
+
+		itemDiv.classList.add("modal__nav__item__dropdown__menu");
+		const itemText = document.createTextNode("Close");
+
+		itemDiv.appendChild(itemText);
+
+		menuDiv.appendChild(itemDiv);
+		modalContent.appendChild(menuDiv);
+
+		itemDiv.addEventListener("click", () => {
+			const modal = document.querySelector(".modal");
+			const taskBarWindow = document.querySelector(
+				".desktop__taskbar__left__open-window-container"
+			);
+			modal.remove();
+			taskBarWindow.remove();
+		});
+	} else {
+		itemDiv.classList.add("modal__nav__item__dropdown__menu--disabled");
+		const itemText = document.createTextNode("Empty");
+
+		itemDiv.appendChild(itemText);
+		menuDiv.appendChild(itemDiv);
+		modalContent.appendChild(menuDiv);
+	}
 };

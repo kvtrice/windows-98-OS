@@ -356,6 +356,26 @@
   border-right: 1.5px solid black;
   border-bottom: 1.5px solid black;
 }
+.modal__nav__item__dropdown {
+  position: absolute;
+  top: 60px;
+  background-color: #bcbebd;
+  border-left: 1.5px solid white;
+  border-top: 1.5px solid white;
+  border-right: 1.5px solid black;
+  border-bottom: 1.5px solid black;
+}
+.modal__nav__item__dropdown__menu {
+  padding: 5px 15px;
+}
+.modal__nav__item__dropdown__menu--disabled {
+  padding: 5px 15px;
+  color: grey;
+}
+.modal__nav__item__dropdown__menu:hover {
+  background-color: #092392;
+  color: white;
+}
 .modal__content {
   flex: 1 1 auto;
   background-color: #bcbebd;
@@ -373,6 +393,9 @@
   border-right: 1.5px solid white;
   border-bottom: 1.5px solid white;
   width: 100%;
+}
+.modal .hidden {
+  visibility: hidden;
 }
 
 @font-face {

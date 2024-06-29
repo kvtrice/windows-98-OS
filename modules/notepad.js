@@ -1,5 +1,11 @@
-export const handleNotepad = () => {
-	const textarea = document.querySelector(".notepad__textarea");
+export const handleNotepad = textarea => {
+	const textToSave = textarea.value;
+	const blob = new Blob([textToSave], { type: "text/plain" });
+	const url = URL.createObjectURL(blob);
 
-	// Save note
+	const a = document.createElement("a");
+	a.href = url;
+	a.download = "mynote.txt";
+	a.click();
+	URL.revokeObjectURL(url);
 };

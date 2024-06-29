@@ -72,6 +72,27 @@
 			&:hover {
 				@include m.regular-borders;
 			}
+
+			&__dropdown {
+				position: absolute;
+				top: 60px;
+				background-color: v.$main-grey;
+				@include m.regular-borders;
+
+				&__menu {
+					padding: 5px 15px;
+
+					&--disabled {
+						padding: 5px 15px;
+						color: grey;
+					}
+
+					&:hover {
+						background-color: v.$ms-blue;
+						color: white;
+					}
+				}
+			}
 		}
 	}
 
@@ -92,5 +113,9 @@
 			@include m.pressed-borders;
 			width: 100%;
 		}
+	}
+
+	.hidden {
+		visibility: hidden;
 	}
 }
