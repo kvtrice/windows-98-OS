@@ -179,10 +179,14 @@
   src: url(../../assets/fonts/MSSansSerif.woff2) format("woff2");
 }
 .apps {
-  display: grid;
-  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 15px;
   padding-top: 20px;
   padding-left: 10px;
+  height: 85vh;
+  width: fit-content;
 }
 
 .app {
@@ -281,6 +285,12 @@
   text-align: center;
   cursor: pointer;
 }
+.modal__header__right__button:active {
+  border-left: 1.5px solid black;
+  border-top: 1.5px solid black;
+  border-right: 1.5px solid white;
+  border-bottom: 1.5px solid white;
+}
 .modal__nav {
   background-color: #bcbebd;
   display: flex;
@@ -350,6 +360,15 @@
 }
 .calculator .calc-btn.--operator {
   color: red;
+}
+.calculator .calc-btn.--zero {
+  grid-column: span 2;
+}
+.calculator .calc-btn:active {
+  border-left: 1.5px solid black;
+  border-top: 1.5px solid black;
+  border-right: 1.5px solid white;
+  border-bottom: 1.5px solid white;
 }
 .calculator__display {
   background-color: white;

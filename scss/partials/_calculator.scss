@@ -22,6 +22,14 @@
 		&.--operator {
 			color: red;
 		}
+
+		&.--zero {
+			grid-column: span 2;
+		}
+
+		&:active {
+			@include m.pressed-borders;
+		}
 	}
 
 	&__display {

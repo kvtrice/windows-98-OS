@@ -48,6 +48,10 @@
 				color: black;
 				text-align: center;
 				cursor: pointer;
+
+				&:active {
+					@include m.pressed-borders;
+				}
 			}
 		}
 	}

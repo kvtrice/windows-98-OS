@@ -93,18 +93,18 @@ export const createCalculator = () => {
 	const calculatorDiv = document.createElement("div");
 	calculatorDiv.classList.add("calculator");
 	calculatorDiv.innerHTML = `
-	<div class="calculator__display">0.</div>
+	<div class="calculator__display"></div>
 		<div class="calculator__buttons">
 			<div class="calculator__buttons__nums">
 			</div>
 			<div class="calculator__buttons__action">
 				<button
-					class="calculator__buttons__action calc-btn --operator"
+					class="calculator__buttons__action calc-btn --operator --clear"
 				>
 					CE
 				</button>
 				<button
-					class="calculator__buttons__action calc-btn --operator"
+					class="calculator__buttons__action calc-btn --operator --equals"
 				>
 					=
 				</button>
@@ -121,6 +121,9 @@ export const createCalculator = () => {
 		button.operator
 			? buttonEl.classList.add("--operator", "calc-btn")
 			: buttonEl.classList.add("calc-btn");
+		if (button.val === 0) {
+			buttonEl.classList.add("--zero");
+		}
 		const value = document.createTextNode(button.val);
 		buttonEl.appendChild(value);
 		buttonsDiv.appendChild(buttonEl);
@@ -209,3 +212,5 @@ export const createDesktopApps = () => {
 		parent.appendChild(appDiv);
 	});
 };
+
+export const createNotepad = () => {};

@@ -2,17 +2,22 @@
 @use "./mixins" as m;
 
 .apps {
-	display: grid;
-	gap: 10px;
+	// display: grid;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 15px;
 	padding-top: 20px;
 	padding-left: 10px;
+	height: 85vh;
+	width: fit-content;
 }
 
 .app {
 	min-height: 90px;
 	width: 90px;
 	height: 10vh;
-    @include m.flex-center;
+	@include m.flex-center;
 
 	&__items {
 		display: flex;

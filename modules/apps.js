@@ -2,8 +2,11 @@ import {
 	createCalculator,
 	createModal,
 	createMediaPlayer,
+	createNotepad,
 } from "./dom-utils.js";
 import { handleMediaPlayer } from "./media-player.js";
+import { handleCalculator } from "./calculator.js";
+import { handleNotepad } from "./notepad.js";
 
 export const highlightOnClick = () => {
 	const apps = document.querySelectorAll(".app");
@@ -53,6 +56,12 @@ export const openApps = () => {
 			asset: "./assets/icons/media-player.png",
 			createFunction: createMediaPlayer(),
 		},
+		{
+			name: "Notepad",
+			id: "notepad",
+			asset: "./assets/icons/notepad.png",
+			createFunction: createNotepad(),
+		},
 	];
 
 	apps.forEach(({ name, id, asset, createFunction }) => {
@@ -60,6 +69,10 @@ export const openApps = () => {
 			createModal(name, asset, createFunction);
 			if (name === "Media Player") {
 				handleMediaPlayer();
+			} else if (name === "Calculator") {
+				handleCalculator();
+			} else if (name === "Notepad") {
+				handleNotepad();
 			}
 		});
 	});

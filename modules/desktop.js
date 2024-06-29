@@ -17,4 +17,21 @@ export const desktopApps = [
 		name: "Media Player",
 		id: "media-player",
 	},
+	{
+		src: "../assets/icons/outlook.png",
+		name: "Outlook",
+	},
+	{
+		src: "../assets/icons/notepad.png",
+		name: "Notepad",
+		id: "notepad",
+	},
+	{
+		src: "../assets/icons/paint-file.png",
+		name: "Paint",
+	},
+	{
+		src: "../assets/icons/recycle-bin.png",
+		name: "Recycle Bin",
+	},
 ];
