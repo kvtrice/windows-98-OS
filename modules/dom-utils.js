@@ -131,7 +131,6 @@ export const createCalculator = () => {
 	return calculatorDiv;
 };
 
-
 export const createMediaPlayer = () => {
 	const mediaPlayerDiv = document.createElement("div");
 	mediaPlayerDiv.classList.add("media-player");

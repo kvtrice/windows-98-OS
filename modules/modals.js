@@ -30,13 +30,16 @@ export const handleModalNavDropdowns = () => {
 
 			createModalNavMenuDropdowns(dropdown, menu);
 
-			// Handle notepad specific logic
 			if (dropdown === "file") {
 				const saveButton = document.querySelector(".--save");
-				saveButton.addEventListener("click", () => {
-					const textarea = document.querySelector(".notepad__text");
-					handleNotepad(textarea);
-				});
+
+				if (saveButton) {
+					saveButton.addEventListener("click", () => {
+						const textarea =
+							document.querySelector(".notepad__text");
+						handleNotepad(textarea);
+					});
+				}
 			}
 
 			currentOpenMenu = dropdown;
