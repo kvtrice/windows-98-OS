@@ -1,0 +1,18 @@
+@use "./variables" as v;
+@use "./mixins" as m;
+
+.notepad {
+	width: 500px;
+	height: 300px;
+
+	&__text {
+		width: calc(100% - 13px);
+		height: calc(100% - 13px);
+		padding: 5px;
+		@include m.pressed-borders;
+
+		&:focus {
+			outline: none;
+		}
+	}
+}

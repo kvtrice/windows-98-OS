@@ -1,0 +1,554 @@
+@import "../css/normalize.css";
+@font-face {
+  font-family: "MS Sans Serif Bold";
+  src: url(../../assets/fonts/MSSansSerifBold.woff2) format("woff2");
+}
+@font-face {
+  font-family: "MS Sans Serif";
+  src: url(../../assets/fonts/MSSansSerif.woff2) format("woff2");
+}
+@font-face {
+  font-family: "MS Sans Serif Bold";
+  src: url(../../assets/fonts/MSSansSerifBold.woff2) format("woff2");
+}
+@font-face {
+  font-family: "MS Sans Serif";
+  src: url(../../assets/fonts/MSSansSerif.woff2) format("woff2");
+}
+.desktop {
+  height: 100vh;
+  width: 100vw;
+}
+.desktop__wallpaper {
+  background-image: url("../assets/wallpapers/win-98-wallpaper3.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.desktop__taskbar {
+  border-top: 1.5px solid white;
+  height: 35px;
+  background-color: #bcbebd;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
+}
+.desktop__taskbar__left {
+  position: relative;
+  display: flex;
+}
+.desktop__taskbar__left__start-container {
+  border-right: 1px solid grey;
+}
+.desktop__taskbar__left__start, .desktop__taskbar__left__open-window {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px;
+  border-radius: none;
+  background-color: #bcbebd;
+}
+.desktop__taskbar__left__start {
+  border-left: 1.5px solid white;
+  border-top: 1.5px solid white;
+  border-right: 1.5px solid black;
+  border-bottom: 1.5px solid black;
+  background-color: #bcbebd;
+  margin-right: 10px;
+}
+.desktop__taskbar__left__start:hover {
+  cursor: pointer;
+}
+.desktop__taskbar__left__start:active, .desktop__taskbar__left__start.open {
+  border-left: 1.5px solid black;
+  border-top: 1.5px solid black;
+  border-right: 1.5px solid white;
+  border-bottom: 1.5px solid white;
+}
+.desktop__taskbar__left__start__icon {
+  height: 20px;
+  width: 24px;
+}
+.desktop__taskbar__left__start__text {
+  padding-left: 5px;
+  font-family: "MS Sans Serif Bold", sans-serif;
+}
+.desktop__taskbar__left__open-window-container {
+  border-left: 1px solid white;
+}
+.desktop__taskbar__left__open-window {
+  background-color: rgb(217, 217, 217);
+  border-left: 1.5px solid black;
+  border-top: 1.5px solid black;
+  border-right: 1.5px solid white;
+  border-bottom: 1.5px solid white;
+  margin-left: 10px;
+}
+.desktop__taskbar__left__open-window:active, .desktop__taskbar__left__open-window.open {
+  border-left: 1.5px solid black;
+  border-top: 1.5px solid black;
+  border-right: 1.5px solid white;
+  border-bottom: 1.5px solid white;
+}
+.desktop__taskbar__left__open-window__icon {
+  height: 24px;
+  width: 24px;
+}
+.desktop__taskbar__left__open-window__text {
+  padding-left: 5px;
+  font-family: "MS Sans Serif", sans-serif;
+}
+.desktop__taskbar__left__shortcuts {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-left: 1px solid white;
+  border-right: 1px solid grey;
+}
+.desktop__taskbar__left__shortcuts__icons {
+  height: 24px;
+  width: 24px;
+}
+.desktop__taskbar__right {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.desktop__taskbar__right__time {
+  height: 90%;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+  align-items: center;
+  border-left: 1.5px solid black;
+  border-top: 1.5px solid black;
+  border-right: 1.5px solid white;
+  border-bottom: 1.5px solid white;
+  padding: 0 5px;
+}
+.desktop__taskbar__right__time p {
+  line-height: 0;
+}
+
+@font-face {
+  font-family: "MS Sans Serif Bold";
+  src: url(../../assets/fonts/MSSansSerifBold.woff2) format("woff2");
+}
+@font-face {
+  font-family: "MS Sans Serif";
+  src: url(../../assets/fonts/MSSansSerif.woff2) format("woff2");
+}
+.menu {
+  position: absolute;
+  border-left: 1.5px solid white;
+  border-top: 1.5px solid white;
+  border-right: 1.5px solid black;
+  border-bottom: 1.5px solid black;
+  bottom: 42px;
+  display: flex;
+  flex-direction: row;
+  width: 240px;
+  height: 450px;
+  margin-left: 3px;
+  visibility: hidden;
+}
+.menu.open {
+  visibility: visible !important;
+}
+.menu__windows {
+  background-image: linear-gradient(to bottom, #050c80 35%, #2282cf 100%);
+  height: 100%;
+  width: 35px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.menu__windows__text {
+  transform: rotate(-90deg);
+  text-wrap: nowrap;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  align-self: flex-end;
+  margin-bottom: 70px;
+}
+.menu__items {
+  width: 100%;
+  background-color: #bcbebd;
+  display: flex;
+  flex-direction: column;
+}
+.menu__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+.menu__item:hover {
+  background-color: #092392;
+  color: white;
+}
+.menu__item__left {
+  display: flex;
+}
+.menu__item__right {
+  align-self: center;
+  width: 15px;
+  height: 15px;
+}
+.menu__item__icon {
+  align-self: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+@font-face {
+  font-family: "MS Sans Serif Bold";
+  src: url(../../assets/fonts/MSSansSerifBold.woff2) format("woff2");
+}
+@font-face {
+  font-family: "MS Sans Serif";
+  src: url(../../assets/fonts/MSSansSerif.woff2) format("woff2");
+}
+.apps {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-top: 20px;
+  padding-left: 10px;
+  height: 85vh;
+  width: fit-content;
+}
+
+.app {
+  min-height: 90px;
+  width: 90px;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.app__items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.app__img {
+  width: 45px;
+  align-self: center;
+}
+.app__text {
+  justify-self: flex-start;
+  text-align: center;
+  text-wrap: wrap;
+  line-height: 1.2;
+  padding: 0 3px;
+}
+
+.clicked--text {
+  border: dotted 1px white;
+  background-color: #092392;
+  color: white;
+}
+.clicked--img {
+  filter: grayscale(80%);
+}
+
+@font-face {
+  font-family: "MS Sans Serif Bold";
+  src: url(../../assets/fonts/MSSansSerifBold.woff2) format("woff2");
+}
+@font-face {
+  font-family: "MS Sans Serif";
+  src: url(../../assets/fonts/MSSansSerif.woff2) format("woff2");
+}
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  border-left: 1.5px solid white;
+  border-top: 1.5px solid white;
+  border-right: 1.5px solid black;
+  border-bottom: 1.5px solid black;
+  border-left: 1.5px solid white;
+  border-top: 1.5px solid white;
+  border-right: 1.5px solid black;
+  border-bottom: 1.5px solid black;
+}
+.modal__wrapper {
+  border: 2px solid #bcbebd;
+}
+.modal__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #050c80 35%, #2282cf 100%);
+  color: white;
+}
+.modal__header__left {
+  display: flex;
+  align-items: center;
+}
+.modal__header__left__app-icon {
+  height: 25px;
+  padding: 0 5px;
+}
+.modal__header__left__app-title {
+  padding-left: 3px;
+}
+.modal__header__right {
+  display: flex;
+  gap: 3px;
+  padding: 0 5px;
+}
+.modal__header__right__button {
+  width: 20px;
+  background-color: #bcbebd !important;
+  border-left: 1.5px solid white;
+  border-top: 1.5px solid white;
+  border-right: 1.5px solid black;
+  border-bottom: 1.5px solid black;
+  color: black;
+  text-align: center;
+  cursor: pointer;
+}
+.modal__header__right__button:active {
+  border-left: 1.5px solid black;
+  border-top: 1.5px solid black;
+  border-right: 1.5px solid white;
+  border-bottom: 1.5px solid white;
+}
+.modal__nav {
+  background-color: #bcbebd;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 5px;
+  overflow: hidden;
+}
+.modal__nav__item {
+  border: 2px transparent solid;
+  padding: 3px 5px;
+  cursor: pointer;
+}
+.modal__nav__item:hover {
+  border-left: 1.5px solid white;
+  border-top: 1.5px solid white;
+  border-right: 1.5px solid black;
+  border-bottom: 1.5px solid black;
+}
+.modal__nav__item__dropdown {
+  position: absolute;
+  top: 60px;
+  background-color: #bcbebd;
+  border-left: 1.5px solid white;
+  border-top: 1.5px solid white;
+  border-right: 1.5px solid black;
+  border-bottom: 1.5px solid black;
+}
+.modal__nav__item__dropdown__menu {
+  padding: 5px 15px;
+}
+.modal__nav__item__dropdown__menu--disabled {
+  padding: 5px 15px;
+  color: grey;
+}
+.modal__nav__item__dropdown__menu:hover {
+  background-color: #092392;
+  color: white;
+}
+.modal__content {
+  flex: 1 1 auto;
+  background-color: #bcbebd;
+}
+.modal__footer {
+  background-color: #bcbebd;
+  height: 25px;
+  display: flex;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+.modal__footer__left, .modal__footer__right {
+  border-left: 1.5px solid black;
+  border-top: 1.5px solid black;
+  border-right: 1.5px solid white;
+  border-bottom: 1.5px solid white;
+  width: 100%;
+}
+.modal .hidden {
+  visibility: hidden;
+}
+
+@font-face {
+  font-family: "MS Sans Serif Bold";
+  src: url(../../assets/fonts/MSSansSerifBold.woff2) format("woff2");
+}
+@font-face {
+  font-family: "MS Sans Serif";
+  src: url(../../assets/fonts/MSSansSerif.woff2) format("woff2");
+}
+.calculator {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+.calculator .calc-btn {
+  border-left: 1.5px solid white;
+  border-top: 1.5px solid white;
+  border-right: 1.5px solid black;
+  border-bottom: 1.5px solid black;
+  background-color: #bcbebd;
+  padding: 4px;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  color: blue;
+}
+.calculator .calc-btn.--operator {
+  color: red;
+}
+.calculator .calc-btn.--zero {
+  grid-column: span 2;
+}
+.calculator .calc-btn:active {
+  border-left: 1.5px solid black;
+  border-top: 1.5px solid black;
+  border-right: 1.5px solid white;
+  border-bottom: 1.5px solid white;
+}
+.calculator__display {
+  background-color: white;
+  text-align: right;
+  padding: 5px 2px;
+  border-left: 1.5px solid black;
+  border-top: 1.5px solid black;
+  border-right: 1.5px solid white;
+  border-bottom: 1.5px solid white;
+}
+.calculator__buttons {
+  display: flex;
+  flex-direction: column;
+}
+.calculator__buttons__nums {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2px;
+  padding: 6px 0;
+}
+.calculator__buttons__action {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+@font-face {
+  font-family: "MS Sans Serif Bold";
+  src: url(../../assets/fonts/MSSansSerifBold.woff2) format("woff2");
+}
+@font-face {
+  font-family: "MS Sans Serif";
+  src: url(../../assets/fonts/MSSansSerif.woff2) format("woff2");
+}
+.media-player {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  background-color: #bcbebd;
+}
+.media-player__video {
+  width: 100%;
+  width: 700px;
+  aspect-ratio: 16/9;
+}
+.media-player__controls {
+  padding-top: 15px;
+  display: flex;
+  justify-content: flex-start;
+}
+.media-player__controls__left, .media-player__controls__right {
+  display: flex;
+  flex-direction: row;
+}
+.media-player__button {
+  display: block;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.media-player__button__icon {
+  width: 24px;
+}
+.media-player .--play img,
+.media-player .--pause img {
+  width: 20px;
+  align-self: center;
+  justify-self: center;
+}
+.media-player .--pause {
+  border-right: 2px solid darkgrey;
+}
+.media-player .--back {
+  border-left: 1px solid rgb(209, 208, 208);
+}
+
+@font-face {
+  font-family: "MS Sans Serif Bold";
+  src: url(../../assets/fonts/MSSansSerifBold.woff2) format("woff2");
+}
+@font-face {
+  font-family: "MS Sans Serif";
+  src: url(../../assets/fonts/MSSansSerif.woff2) format("woff2");
+}
+.notepad {
+  width: 500px;
+  height: 300px;
+}
+.notepad__text {
+  width: calc(100% - 13px);
+  height: calc(100% - 13px);
+  padding: 5px;
+  border-left: 1.5px solid black;
+  border-top: 1.5px solid black;
+  border-right: 1.5px solid white;
+  border-bottom: 1.5px solid white;
+}
+.notepad__text:focus {
+  outline: none;
+}
+
+html {
+  font-family: "MS Sans Serif", sans-serif;
+  box-sizing: border-box;
+}
+
+p {
+  line-height: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

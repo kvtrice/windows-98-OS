@@ -1,0 +1,21 @@
+@use "../scss/partials/variables" as v;
+@use "../scss/partials/mixins" as m;
+@import "../css/normalize.css";
+@import "../scss/partials/desktop";
+@import "../scss/partials/menu";
+@import "../scss/partials/apps";
+@import "../scss/partials/modals";
+@import "../scss/partials/calculator";
+@import "../scss/partials/media-player";
+@import "../scss/partials/notepad";
+
+//Global Styles
+
+html {
+	font-family: v.$primary-font;
+	box-sizing: border-box;
+}
+
+p {
+	line-height: 0;
+}

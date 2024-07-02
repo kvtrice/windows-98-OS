@@ -1,0 +1,52 @@
+@use "./variables" as v;
+@use "./mixins" as m;
+
+.apps {
+	// display: grid;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 15px;
+	padding-top: 20px;
+	padding-left: 10px;
+	height: 85vh;
+	width: fit-content;
+}
+
+.app {
+	min-height: 90px;
+	width: 90px;
+	height: 10vh;
+	@include m.flex-center;
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+
+	&__img {
+		width: 45px;
+		align-self: center;
+	}
+
+	&__text {
+		justify-self: flex-start;
+		text-align: center;
+		text-wrap: wrap;
+		line-height: 1.2;
+		padding: 0 3px;
+	}
+}
+
+.clicked {
+	&--text {
+		border: dotted 1px white;
+		background-color: v.$ms-blue;
+		color: white;
+	}
+
+	&--img {
+		filter: grayscale(80%);
+	}
+}

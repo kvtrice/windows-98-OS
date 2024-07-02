@@ -9,8 +9,82 @@
 		<title>Windows 98</title>
 		<link
 			rel="stylesheet"
-			href="style.css"
+			href="./css/style.css"
 		/>
+		<link
+			rel="shortcut icon"
+			href="./assets/favicon/win98.svg"
+			type="image/x-icon"
+		/>
+		<script
+			type="module"
+			src="./main.js"
+			defer
+		></script>
 	</head>
-	<body></body>
+	<body>
+		<main class="desktop">
+			<!-- Desktop -->
+			<section class="desktop__wallpaper">
+				<!-- Desktop Apps -->
+				<div class="apps"></div>
+			</section>
+
+			<!-- Taskbar -->
+			<section class="desktop__taskbar">
+				<div class="desktop__taskbar__left">
+					<div class="desktop__taskbar__left__start-container">
+						<button
+							class="desktop__taskbar__left__start"
+							id="start"
+						>
+							<img
+								class="desktop__taskbar__left__start__icon"
+								src="./assets/icons/start.png"
+								alt="Start Icon"
+							/>
+							<p class="desktop__taskbar__left__start__text">
+								Start
+							</p>
+						</button>
+					</div>
+					<div class="desktop__taskbar__left__shortcuts">
+						<img
+							class="desktop__taskbar__left__shortcuts__icons"
+							src="./assets/icons/documents.png"
+							alt="Documents"
+						/>
+						<img
+							class="desktop__taskbar__left__shortcuts__icons"
+							src="./assets/icons/ie.png"
+							alt="Internet Explorer"
+						/>
+						<img
+							class="desktop__taskbar__left__shortcuts__icons"
+							src="./assets/icons/recycle-bin.png"
+							alt="Recycle Bin"
+						/>
+					</div>
+				</div>
+				<div class="desktop__taskbar__right">
+					<div class="desktop__taskbar__right__time">
+						<p id="time"></p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Start Menu -->
+			<div
+				class="menu"
+				id="menu"
+			>
+				<div class="menu__windows">
+					<p class="menu__windows__text">Windows 98</p>
+				</div>
+
+				<!-- Start Menu Items -->
+				<div class="menu__items"></div>
+			</div>
+		</main>
+	</body>
 </html>

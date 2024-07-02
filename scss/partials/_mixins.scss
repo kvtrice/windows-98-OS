@@ -1,0 +1,20 @@
+@mixin regular-borders {
+	border-left: 1.5px solid white;
+	border-top: 1.5px solid white;
+	border-right: 1.5px solid black;
+	border-bottom: 1.5px solid black;
+}
+
+@mixin pressed-borders {
+	border-left: 1.5px solid black;
+	border-top: 1.5px solid black;
+	border-right: 1.5px solid white;
+	border-bottom: 1.5px solid white;
+}
+
+@mixin flex-center {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
