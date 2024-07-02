@@ -6,7 +6,7 @@ Welcome to my fake OS project! This projects goal was to simulate the look and f
 
 ## Table of Contents
 
--   View the Live Site
+-   [View the Live Site](https://windows-98-os.vercel.app/)
 -   [Key Features](#key-features)
 -   [Installation](#installation)
 
